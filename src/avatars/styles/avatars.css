@@ -1,0 +1,61 @@
+html * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.face-wrap {
+  padding: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  font-size: 0;
+}
+
+.face-list:first-child {
+  margin-bottom: 20px;
+}
+
+.face-list li {
+  position: relative;
+  display: inline-block;
+}
+
+.face-list li:not(:nth-child(4)) {
+  margin-right: 20px;
+}
+
+.face-list li img {
+  border-radius: 50%;
+}
+
+.face-list li div {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.face-list li div.login {
+  background-color: #4cfe88;
+}
+.face-list li div.logout {
+  background-color: #dbdbdb;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
