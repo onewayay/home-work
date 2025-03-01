@@ -1,1 +1,306 @@
-/* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+body,
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #121212;
+  font-family: "Spoqa Han Sans Neo", "sans-serif";
+
+  &:focus {
+    outline-color: #24388d;
+  }
+}
+
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
+fieldset {
+  border: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+:root {
+  /* 색상 */
+  --ci-color: #03cf5d;
+  --white: #fff;
+  --light-blue: #e9f0fd;
+  --red: #ff1414;
+  --gray: #999;
+  --light-gray: #dadada;
+  --dark-gray: #333;
+
+  /*  크기 */
+  --font-default: 1rem;
+  --font-sm: 0.875rem;
+  --font-xs: 0.75rem;
+
+  /* 간격 */
+  --spacing-100: 6.25rem;
+  --spacing-70: 4.375rem;
+  --spacing-50: 3.125rem;
+  --spacing-45: 2.8125rem;
+  --spacing-24: 1.5rem;
+  --spacing-20: 1.25rem;
+  --spacing-14: 0.875rem;
+  --spacing-10: 0.625rem;
+  --spacing-7: 0.4375rem;
+  --spacing-5: 0.3125rem;
+}
+
+.wrapper {
+  inline-size: 100%;
+  margin-block-start: var(--spacing-70);
+  padding-inline: var(--spacing-20);
+  text-align: center;
+  align-content: center;
+
+  @media (min-width: 768px) {
+    margin-block-start: var(--spacing-100);
+    padding-inline: 0;
+  }
+}
+
+/* 로고 영역 */
+.login-logo a {
+  display: inline-block;
+
+  svg {
+    vertical-align: top;
+  }
+}
+
+/* form 영역 */
+.form-wrap {
+  margin-block-start: var(--spacing-45);
+
+  @media (min-width: 768px) {
+    width: 500px;
+    margin-block-start: var(--spacing-50);
+    margin-inline: auto;
+    padding-inline: var(--spacing-20);
+  }
+}
+
+.login-form {
+  --input-border: var(--light-gray);
+  --input-bg: var(--white);
+  --input-border-focus: var(--ci-color);
+  --input-bg-focus: var(--light-blue);
+  --error-color: var(--red);
+  --submit-text: var(--white);
+  --submit-bg: var(--ci-color);
+  --label-text: var(--gray);
+
+  --input-height: var(--spacing-45);
+  --input-padding: var(--spacing-14);
+  --input-spacing: var(--spacing-10);
+  --submit-height: var(--spacing-45);
+  --submit-spacing: var(--spacing-20);
+  --error-spacing: var(--spacing-7);
+
+  --input-font: var(--font-sm);
+  --input-font-xs: var(--font-xs);
+  --submit-font: var(--font-default);
+  --error-font: var(--font-xs);
+
+  .input-id {
+    input {
+      position: relative;
+      inline-size: 100%;
+      block-size: var(--input-height);
+      padding: var(--input-padding);
+      border: 1px solid var(--input-border);
+      font-size: var(--input-font);
+      background-color: var(--input-bg);
+
+      &:focus {
+        outline-color: var(--input-border-focus);
+        background-color: var(--input-bg-focus);
+      }
+
+      &::placeholder {
+        position: absolute;
+        top: 50%;
+        left: var(--input-padding);
+        translate: 0 -50%;
+      }
+
+      &:focus::placeholder {
+        position: absolute;
+        top: 28px;
+        left: calc(100% - var(--input-padding));
+        translate: -100% -50%;
+        font-weight: 300;
+        font-size: var(--input-font-xs);
+      }
+    }
+  }
+
+  .input-password {
+    margin-block-start: var(--input-spacing);
+    position: relative;
+
+    input {
+      position: relative;
+      inline-size: 100%;
+      block-size: var(--spacing-45);
+      padding: var(--input-padding);
+      border: 1px solid var(--input-border);
+      font-size: var(--input-font);
+      background-color: var(--input-bg);
+
+      &:focus {
+        outline-color: var(--input-border-focus);
+        background-color: var(--input-bg-focus);
+      }
+
+      &::placeholder {
+        position: absolute;
+        top: 50%;
+        left: var(--input-padding);
+        translate: 0 -50%;
+      }
+
+      &:focus::placeholder {
+        position: absolute;
+        top: 28px;
+        left: calc(100% - var(--input-padding));
+        translate: -100% -50%;
+        font-weight: 300;
+        font-size: var(--input-font-xs);
+      }
+    }
+  }
+
+  /* 로그인 버튼 */
+  .login-submit {
+    margin-block-start: var(--submit-spacing);
+    inline-size: 100%;
+    block-size: var(--submit-height);
+    border: none;
+    color: var(--submit-text);
+    font-size: var(--submit-font);
+    font-weight: 700;
+    background-color: var(--submit-bg);
+  }
+
+  p.error-message {
+    display: none;
+    margin-block-start: var(--error-spacing);
+    color: var(--error-color);
+    font-size: var(--error-font);
+    text-align: left;
+  }
+
+  input:focus:invalid ~ p.error-message {
+    display: block;
+  }
+}
+
+/* 옵션 버튼 */
+.login-options {
+  --options-spacing: var(--spacing-10);
+  --options-gap: var(--spacing-5);
+  --keep-size: var(--spacing-24);
+
+  --keep-font: var(--font-sm);
+  --security-font: var(--font-sm);
+  --security-font-onoff: var(--font-default);
+
+  --keep-color: var(--dark-gray);
+  --security-off: var(--gray);
+  --security-on: var(--ci-color);
+
+  margin-top: var(--options-spacing);
+  display: flex;
+  inline-size: 100%;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: center;
+
+  .keep-login {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: var(--options-gap);
+
+    input {
+      position: relative;
+      inline-size: var(--keep-size);
+      block-size: var(--keep-size);
+      appearance: none;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: url("../images/ico_unchecked.svg") no-repeat center / cover;
+      }
+
+      &:checked::after {
+        background: url("../images/ico_checked.svg") no-repeat center / cover;
+      }
+    }
+
+    label {
+      margin-top: -2px;
+      font-size: var(--keep-font);
+      color: var(--keep-color);
+    }
+  }
+
+  .login-security {
+    display: none;
+
+    a {
+      font-size: var(--security-font);
+    }
+
+    .input-security {
+      input {
+        appearance: none;
+
+        &::after {
+          content: "OFF";
+          display: block;
+          width: 32px;
+          color: var(--security-off);
+          font-size: var(--security-font-onoff);
+          font-weight: 700;
+          text-align: right;
+        }
+        &:checked::after {
+          content: "ON";
+          color: var(--security-on);
+        }
+      }
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: var(--options-gap);
+    }
+  }
+
+  @media (min-width: 768px) {
+    justify-content: space-between;
+  }
+}
