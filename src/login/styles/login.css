@@ -224,7 +224,7 @@ fieldset {
   --security-off: var(--gray);
   --security-on: var(--ci-color);
 
-  margin-top: var(--options-spacing);
+  margin-block-start: var(--options-spacing);
   display: flex;
   inline-size: 100%;
   flex-flow: row nowrap;
@@ -259,7 +259,7 @@ fieldset {
     }
 
     label {
-      margin-top: -2px;
+      margin-block-start: -2px;
       font-size: var(--keep-font);
       color: var(--keep-color);
     }
