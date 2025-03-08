@@ -1,0 +1,63 @@
+@import "../button-box/button-box.css";
+
+/** 텍스트 박스 컴포넌트**/
+.text-box {
+  --text-title: var(--large-text);
+  --text-sub-title: var(--base-text);
+  --text-content: var(--small-text);
+
+  --text-black: var(--black);
+  --text-white: var(--white);
+  --content-color: var(--gray);
+
+  --text-spacing: var(--small-spacing);
+
+  text-align: center;
+
+  h2 {
+    font-size: var(--text-title);
+    font-weight: 700;
+  }
+
+  div.sub-title {
+    margin-block-start: var(--text-spacing);
+    display: flex;
+    flex-flow: column nowrap;
+
+    strong {
+      display: block;
+      font-size: var(--text-sub-title);
+      font-weight: 400;
+    }
+
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      justify-content: center;
+      gap: 6px;
+    }
+  }
+
+  p {
+    margin-block-start: var(--text-spacing);
+    font-size: var(--text-content);
+    font-weight: 500;
+    color: var(--content-color);
+  }
+
+  .button-box {
+    margin-block-start: var(--text-spacing);
+  }
+
+  &.white {
+    h2,
+    strong {
+      color: var(--text-white);
+    }
+  }
+  &.black {
+    h2,
+    strong {
+      color: var(--text-black);
+    }
+  }
+}

@@ -1,0 +1,65 @@
+/* sf pro kr 폰트*/
+@font-face {
+  font-family: "SFProKRDisplay";
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("SFProKRDisplay Bold"),
+    url("../font/SFProKRDisplay_bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "SFProKRDisplay";
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("SFProKRDisplay SemiBold"),
+    url("../font/SFProKRDisplay_semibold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SFProKRDisplay";
+  font-weight: 500;
+  font-display: swap;
+  src:
+    local("SFProKRDisplay Medium"),
+    url("../font/SFProKRDisplay_medium.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "SFProKRDisplay";
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("SFProKRDisplay Regular"),
+    url("../font/SFProKRDisplay_regular.woff2") format("woff2");
+}
+
+:root {
+  --base-font-family: "SF Pro Display", "SFProKRDisplay";
+}
+
+body *,
+body *::before,
+body *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--base-font-family);
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* 숨김 콘텐츠 */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  clip-path: polygon(0 0, 0 0, 0 0);
+  overflow: hidden;
+  padding: 0;
+  white-space: nowrap;
+  border-width: 0;
+}

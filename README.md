@@ -14,5 +14,10 @@
 
 ## 4주차 과제
 
-- [Avatars](./src/login/login.html)
+- [Login](./src/login/login.html)
 - [회고](./src/login/login.md)
+
+## 5주차 과제
+
+- [Apple](./src/apple/apple.html)
+- [회고](./src/apple/apple.md)

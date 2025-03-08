@@ -1,0 +1,94 @@
+@import "../../styles/reset.css";
+@import "../../styles/theme.css";
+@import "../../styles/base.css";
+
+/** 버튼 컴포넌트 **/
+
+/* 기본 */
+.button {
+  --pd-block-size: var(--x-small-spacing);
+  --pd-inline-size: var(--small-spacing);
+  --text-size: var(--xx-small-text);
+  --disabled-color: var(--gray);
+  --disabled-text-color: var(--white);
+
+  display: inline-block;
+  padding: var(--pd-block-size) var(--pd-inline-size);
+  border-radius: 30px;
+  font-size: var(--text-size);
+
+  &.disabled {
+    border-color: var(--disabled-color);
+    color: var(--disabled-text-color);
+    background-color: var(--disabled-color);
+    cursor: not-allowed;
+  }
+
+  @media (min-width: 1024px) {
+    --text-size: var(--x-small-text);
+  }
+}
+
+/* Fill Button */
+.fill-btn {
+  --btn-blue: var(--blue-400);
+  --text-blue: var(--white);
+  --hover-bg-blue: var(--blue-200);
+
+  --btn-black: var(--black);
+  --text-black: var(--black);
+  --hover-bg-black: #292929;
+
+  &.blue {
+    border: 1px solid var(--btn-blue);
+    color: var(--text-blue);
+    background-color: var(--btn-blue);
+
+    &:hover {
+      background-color: var(--hover-bg-blue);
+    }
+  }
+
+  &.black {
+    border: 1px solid var(--btn-black);
+    color: var(--text-blue);
+    background-color: var(--btn-black);
+
+    &:hover {
+      background-color: var(--hover-bg-black);
+    }
+  }
+}
+
+/* Outline Button */
+.outline-btn {
+  --btn-blue: var(--blue-400);
+  --text-blue: var(--blue-400);
+  --hover-text-blue: var(--white);
+
+  --btn-black: var(--black);
+  --text-black: var(--black);
+  --hover-text-black: var(--white);
+
+  background-color: transparent;
+
+  &.blue {
+    border: 1px solid var(--btn-blue);
+    color: var(--text-blue);
+
+    &:hover {
+      background-color: var(--btn-blue);
+      color: var(--hover-text-blue);
+    }
+  }
+
+  &.black {
+    border: 1px solid var(--btn-black);
+    color: var(--text-black);
+
+    &:hover {
+      background-color: var(--btn-black);
+      color: var(--hover-text-black);
+    }
+  }
+}

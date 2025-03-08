@@ -1,0 +1,91 @@
+@import "../components/card/card.css";
+
+/* 카드 레이아웃 */
+
+.products {
+  --card-gap: var(--small-spacing);
+
+  display: grid;
+  gap: var(--card-gap);
+
+  @media (min-width: 1024px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ipad-pro {
+    background: image-set(
+        url(../products/ipad_pro.jpeg) 1x,
+        url(../products/ipad_pro_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+
+    @media (min-width: 1024px) {
+      grid-column: span 2;
+
+      background-image: image-set(
+        url(../products/ipad_pro_wide.jpeg) 1x,
+        url(../products/ipad_pro_wide_2x.jpeg) 2x
+      );
+    }
+  }
+  .ipad-air {
+    background: image-set(
+        url(../products/ipad_air.jpeg) 1x,
+        url(../products/ipad_air_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+
+    @media (min-width: 1024px) {
+      grid-column: span 2;
+
+      background-image: image-set(
+        url(../products/ipad_air_wide.jpeg) 1x,
+        url(../products/ipad_air_wide_2x.jpeg) 2x
+      );
+    }
+  }
+  .iphone15-pro {
+    background: image-set(
+        url(../products/iphone15_pro.jpeg) 1x,
+        url(../products/iphone15_pro_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+
+    @media (min-width: 1024px) {
+      grid-column: span 2;
+
+      background-image: image-set(
+        url(../products/iphone15_pro_wide.jpeg) 1x,
+        url(../products/iphone15_pro_wide_2x.jpeg) 2x
+      );
+    }
+  }
+  .iphone15 {
+    background: image-set(
+        url(../products/iphone15.jpeg) 1x,
+        url(../products/iphone15_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+  }
+  .watch {
+    background: image-set(
+        url(../products/apple_watch.jpeg) 1x,
+        url(../products/apple_watch_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+  }
+  .macbook-air {
+    background: image-set(
+        url(../products/macbook_air.jpeg) 1x,
+        url(../products/macbook_air_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+  }
+  .airpods-pro {
+    background: image-set(
+        url(../products/airpods_pro.jpeg) 1x,
+        url(../products/airpods_pro_2x.jpeg) 2x
+      )
+      no-repeat center / cover;
+  }
+}

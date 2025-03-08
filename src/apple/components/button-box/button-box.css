@@ -1,0 +1,10 @@
+@import "../button/button.css";
+
+/** 버튼 박스 컴포넌트**/
+.button-box {
+  --buttons-gap: var(--base-spacing);
+
+  display: inline-flex;
+  flex-flow: row nowrap;
+  column-gap: var(--buttons-gap);
+}
